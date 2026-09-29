@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tolmondh.github.io/np-venice-move/sitemap.xml
