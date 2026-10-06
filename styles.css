@@ -181,4 +181,4 @@ code {
 /* Talk-to-a-local-agent CTA (draft) */
 .agent-cta h2 { margin-top: 0; font-size: 1.1rem; }
 .agent-cta__broker { font-size: 0.85rem; color: var(--muted); margin: 0.75rem 0 0; }
-.confirm { background: #ffe9a8; color: #6b4e00; font-weight: 700; padding: 0 0.25em; border-radius: 0.2rem; }
+.placeholder { background: #ffe9a8; color: #6b4e00; font-weight: 700; padding: 0 0.25em; border-radius: 0.2rem; }
