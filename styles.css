@@ -177,3 +177,7 @@ code {
   padding: 0.1em 0.35em;
   border-radius: 0.25rem;
 }
+
+/* Talk-to-a-local-agent CTA */
+.agent-cta h2 { margin-top: 0; font-size: 1.1rem; }
+.agent-cta__broker { font-size: 0.85rem; color: var(--muted); margin: 0.75rem 0 0; }
