@@ -181,3 +181,7 @@ code {
 /* Talk-to-a-local-agent CTA */
 .agent-cta h2 { margin-top: 0; font-size: 1.1rem; }
 .agent-cta__broker { font-size: 0.85rem; color: var(--muted); margin: 0.75rem 0 0; }
+
+/* Newsletter signup CTA (plain link to beehiiv subscribe page) */
+.newsletter-cta h2 { margin-top: 0; font-size: 1.1rem; }
+.newsletter-cta__note { font-size: 0.85rem; color: var(--muted); margin: 0.5rem 0 0; }
