@@ -185,3 +185,123 @@ code {
 /* Newsletter signup CTA (plain link to beehiiv subscribe page) */
 .newsletter-cta h2 { margin-top: 0; font-size: 1.1rem; }
 .newsletter-cta__note { font-size: 0.85rem; color: var(--muted); margin: 0.5rem 0 0; }
+
+/* Local services directory — available sponsor spots */
+.sponsor-spot {
+  background: var(--card);
+  border: 1px dashed var(--accent);
+  border-radius: 0.65rem;
+  padding: 0.85rem 1rem;
+  margin: 0.85rem 0 1.5rem;
+}
+.sponsor-spot__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+.sponsor-spot p { margin: 0 0 0.5rem; }
+.sponsor-spot p:last-child { margin-bottom: 0; }
+.category-block { margin-bottom: 0.5rem; }
+
+/* Closing cost calculator */
+.calc-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+.calc-tab {
+  appearance: none;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.55rem 1rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+.calc-tab[aria-selected="true"] {
+  background: var(--accent);
+  color: #fff;
+}
+.calc-tab:hover { background: var(--soft); }
+.calc-tab[aria-selected="true"]:hover { background: var(--accent-2); }
+.calc-panel[hidden] { display: none; }
+.calc-form, .calc-extras {
+  display: grid;
+  gap: 0.75rem 1rem;
+  margin: 1rem 0;
+}
+@media (min-width: 36rem) {
+  .calc-form { grid-template-columns: 1fr 1fr; }
+  .calc-extras { grid-template-columns: 1fr 1fr; }
+}
+.calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.calc-field label {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.calc-field .hint {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+.calc-field input[type="number"],
+.calc-field input[type="text"],
+.calc-field select {
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: var(--card);
+  color: var(--ink);
+  width: 100%;
+  max-width: 100%;
+}
+.calc-field input:focus,
+.calc-field select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.calc-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0.35rem 0;
+  font-size: 0.95rem;
+}
+.calc-check input { margin-top: 0.3rem; flex-shrink: 0; }
+.calc-results {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.55rem;
+  overflow: hidden;
+  font-size: 0.95rem;
+  margin: 0.75rem 0 1rem;
+}
+.calc-results th,
+.calc-results td {
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.calc-results th { background: var(--soft); font-weight: 600; }
+.calc-results td.amt, .calc-results th.amt { text-align: right; white-space: nowrap; }
+.calc-results tr.total td { font-weight: 700; border-bottom: 0; background: var(--soft); }
+.calc-results .zero { color: var(--muted); }
+.sources { font-size: 0.92rem; }
+.sources li { margin: 0.35rem 0; }

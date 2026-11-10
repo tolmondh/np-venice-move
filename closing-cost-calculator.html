@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Florida closing cost estimator (Sarasota County) | Move Guide</title>
+  <meta name="description" content="Estimate Florida documentary stamp taxes, intangible tax, promulgated title insurance premiums, and Sarasota County recording fees for a North Port or Venice home purchase. Estimate only — verify with a licensed title or escrow company.">
+  <link rel="stylesheet" href="/np-venice-move/styles.css">
+  <link rel="canonical" href="https://tolmondh.github.io/np-venice-move/closing-cost-calculator.html">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="/np-venice-move/">NP &amp; Venice Move Guide</a>
+      <nav aria-label="Primary">
+                <ul class="site-nav">
+          <li><a href="/np-venice-move/">Home</a></li>
+          <li><a href="/np-venice-move/guides/" aria-current="page">Guides</a></li>
+          <li><a href="/np-venice-move/about.html">About</a></li>
+          <li><a href="/np-venice-move/disclosure.html">Disclosure</a></li>
+          <li><a href="/np-venice-move/terms.html">Terms</a></li>
+          <li><a href="/np-venice-move/privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <h1>Florida closing cost estimator (Sarasota County)</h1>
+      <p class="lede">A simple estimate of the Florida taxes, promulgated title-insurance premiums, and Sarasota County recording fees that often show up on a North Port or Venice closing. It runs in your browser. It is not a Loan Estimate or a Closing Disclosure.</p>
+
+      <div class="note">
+        <p><strong>Disclaimer:</strong> This is an estimate only. It is not a Loan Estimate, Closing Disclosure, or official quote. Rates and customs can change, and your contract controls who pays what. Verify every figure with a licensed title or escrow company before you rely on it. This page does not name or recommend any title company, lender, or other settlement-service provider.</p>
+      </div>
+
+      <h2>Enter the deal</h2>
+      <form class="calc-form" id="calc-inputs" action="#" method="get">
+        <div class="calc-field">
+          <label for="price">Purchase price ($)</label>
+          <input type="number" id="price" name="price" min="0" step="0.01" inputmode="decimal" value="400000" required>
+        </div>
+        <div class="calc-field">
+          <label for="loan">Loan amount ($)</label>
+          <span class="hint">Enter 0 for an all-cash purchase.</span>
+          <input type="number" id="loan" name="loan" min="0" step="0.01" inputmode="decimal" value="320000">
+        </div>
+        <div class="calc-field">
+          <label for="sellerCommission">Seller commission (%)</label>
+          <span class="hint">Enter the total percent actually agreed in writing. There is no legally required commission rate.</span>
+          <input type="number" id="sellerCommission" name="sellerCommission" min="0" max="100" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="buyerCommission">Buyer brokerage (%)</label>
+          <span class="hint">Optional. Enter 0 if none is being paid by the buyer at closing.</span>
+          <input type="number" id="buyerCommission" name="buyerCommission" min="0" max="100" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="deedPages">Deed pages</label>
+          <span class="hint">Used only to estimate the Clerk’s recording fee. Many deeds are 1–2 pages; edit if you know the count.</span>
+          <input type="number" id="deedPages" name="deedPages" min="1" step="1" inputmode="numeric" value="2">
+        </div>
+        <div class="calc-field">
+          <label for="mortgagePages">Mortgage pages</label>
+          <span class="hint">Page counts vary widely. This default is only a placeholder — edit it. Used only if there is a loan.</span>
+          <input type="number" id="mortgagePages" name="mortgagePages" min="1" step="1" inputmode="numeric" value="20">
+        </div>
+        <div class="calc-field">
+          <label for="ownerPays">Who pays the owner’s title policy?</label>
+          <span class="hint">Not set by statute. Local custom in Sarasota County is often the buyer; the contract controls. See notes below.</span>
+          <select id="ownerPays" name="ownerPays">
+            <option value="buyer" selected>Buyer (common Sarasota County starting point)</option>
+            <option value="seller">Seller</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="deedStampsPay">Who pays deed documentary stamps?</label>
+          <span class="hint">Not set by statute. Local custom is often the seller; the contract controls.</span>
+          <select id="deedStampsPay" name="deedStampsPay">
+            <option value="seller" selected>Seller (common starting point)</option>
+            <option value="buyer">Buyer</option>
+          </select>
+        </div>
+      </form>
+
+      <label class="calc-check">
+        <input type="checkbox" id="reissue" name="reissue">
+        <span>A prior owner’s policy may qualify this transaction for <strong>reissue rates</strong> under Rule 69O-186.003 (not used unless this box is checked). Confirm eligibility with the title company.</span>
+      </label>
+
+      <h2>Other fees (editable — not official rates)</h2>
+      <p>Title search, exam, and closing charges are <em>not</em> set by the promulgated title-insurance rate. Lender fees, surveys, HOA estoppels, municipal lien searches, prepaid taxes, and similar items vary. Defaults are $0 so this page does not invent those figures. Enter amounts from your Loan Estimate, quote, or contract.</p>
+      <div class="calc-extras" id="other-fees">
+        <div class="calc-field">
+          <label for="titleServicesBuyer">Title search / exam / closing (buyer) ($)</label>
+          <input type="number" id="titleServicesBuyer" min="0" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="titleServicesSeller">Title / closing charges (seller) ($)</label>
+          <input type="number" id="titleServicesSeller" min="0" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="survey">Survey ($)</label>
+          <input type="number" id="survey" min="0" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="lienSearch">Municipal lien search ($)</label>
+          <input type="number" id="lienSearch" min="0" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="hoaEstoppel">HOA / condo estoppel or transfer ($)</label>
+          <input type="number" id="hoaEstoppel" min="0" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="lenderFees">Lender fees ($)</label>
+          <input type="number" id="lenderFees" min="0" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="prepaids">Prepaids (taxes, insurance, interest) ($)</label>
+          <input type="number" id="prepaids" min="0" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="otherBuyer">Other buyer costs ($)</label>
+          <input type="number" id="otherBuyer" min="0" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="otherSeller">Other seller costs ($)</label>
+          <input type="number" id="otherSeller" min="0" step="0.01" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="recOverrideBuyer">Recording fee override, buyer ($)</label>
+          <span class="hint">Leave blank to use the Clerk’s $10 + $8.50/page estimate. Enter a number to replace it.</span>
+          <input type="number" id="recOverrideBuyer" min="0" step="0.01" inputmode="decimal" placeholder="Auto">
+        </div>
+        <div class="calc-field">
+          <label for="recOverrideSeller">Recording fee override, seller ($)</label>
+          <span class="hint">Optional. Use this for a mortgage satisfaction or other seller documents if you have a figure.</span>
+          <input type="number" id="recOverrideSeller" min="0" step="0.01" inputmode="decimal" value="0">
+        </div>
+      </div>
+
+      <div class="calc-tabs" role="tablist" aria-label="Buyer or seller results">
+        <button type="button" class="calc-tab" role="tab" id="tab-buyer" aria-controls="panel-buyer" aria-selected="true">Buyer</button>
+        <button type="button" class="calc-tab" role="tab" id="tab-seller" aria-controls="panel-seller" aria-selected="false">Seller</button>
+      </div>
+
+      <div class="calc-panel" role="tabpanel" id="panel-buyer" aria-labelledby="tab-buyer">
+        <h2>Buyer estimate</h2>
+        <table class="calc-results" id="buyer-table">
+          <thead>
+            <tr><th>Item</th><th class="amt">Amount</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="calc-panel" role="tabpanel" id="panel-seller" aria-labelledby="tab-seller" hidden>
+        <h2>Seller estimate</h2>
+        <table class="calc-results" id="seller-table">
+          <thead>
+            <tr><th>Item</th><th class="amt">Amount</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <p class="meta" id="calc-summary"></p>
+
+      <h2>How the official rates are calculated</h2>
+      <ul class="sources">
+        <li><strong>Deed documentary stamp tax:</strong> $0.70 per $100, or portion thereof, of the consideration (purchase price). Round the price up to the nearest $100, then multiply. Minimum $0.70. Sarasota County uses the statewide rate; only Miami-Dade is different. Source: <a href="https://floridarevenue.com/taxes/taxesfees/pages/doc_stamp.aspx" rel="noopener" target="_blank">Florida Department of Revenue, Documentary Stamp Tax</a> and <a href="https://www.flsenate.gov/Laws/Statutes/2026/0201.02" rel="noopener" target="_blank">section 201.02, Florida Statutes</a>.</li>
+        <li><strong>Mortgage / note documentary stamp tax:</strong> $0.35 per $100, or portion thereof, of the loan amount, rounding the loan up to the nearest $100. The Clerk collects this when the mortgage is recorded. A $2,450 cap applies to certain unrecorded promissory notes under section 201.08(1)(a), but there is <em>no cap</em> on a mortgage recorded in Florida under section 201.08(1)(b). This estimator assumes a recorded purchase-money mortgage, so it does not apply the cap. Source: <a href="https://floridarevenue.com/taxes/taxesfees/pages/doc_stamp.aspx" rel="noopener" target="_blank">Florida DOR, Documentary Stamp Tax</a> and <a href="https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&amp;Search_String=&amp;URL=0200-0299%2F0201%2FSections%2F0201.08.html" rel="noopener" target="_blank">section 201.08, Florida Statutes</a>.</li>
+        <li><strong>Nonrecurring intangible tax:</strong> 2 mills, which is 0.2% of the exact loan amount secured by Florida real property (do not round the loan up). The Clerk also lists this as $0.20 per $100 of the exact obligation, with a $0.20 minimum. Source: <a href="https://floridarevenue.com/taxes/taxesfees/Pages/nonrecurring_intangible_tax.aspx" rel="noopener" target="_blank">Florida DOR, Nonrecurring Intangible Tax</a>, <a href="https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&amp;URL=0100-0199%2F0199%2F0199.html" rel="noopener" target="_blank">section 199.133, Florida Statutes</a>, and the <a href="https://www.sarasotaclerk.com/Records/Recording-Services/Recording-Requirements/Recording-Fees-and-Taxes-Required" rel="noopener" target="_blank">Sarasota County Clerk recording-fees page</a>.</li>
+        <li><strong>Owner’s title insurance (promulgated risk premium):</strong> For an original owner’s policy, $5.75 per $1,000 on the first $100,000 of liability, plus $5.00 per $1,000 from $100,000 to $1 million, plus $2.50 per $1,000 from $1 million to $5 million, plus $2.25 per $1,000 from $5 million to $10 million, plus $2.00 per $1,000 over $10 million. Any fraction of $100 is treated as a full $100. Minimum premium is $100. The owner’s policy is issued for the full insurable value, which is typically the purchase price. Lender’s (mortgagee’s) original rates use the same schedule when a lender’s policy is issued alone. Source: <a href="https://www.law.cornell.edu/regulations/florida/Fla-Admin-Code-Ann-R-69O-186-003" rel="noopener" target="_blank">Fla. Admin. Code r. 69O-186.003</a>, official rule record at <a href="https://flrules.org/gateway/RuleNo.asp?ID=69O-186.003" rel="noopener" target="_blank">flrules.org</a>, and the <a href="https://www.myfloridacfo.com/division/consumers/understanding-insurance/title-insurance-overview" rel="noopener" target="_blank">Florida DFS Title Insurance Overview</a>.</li>
+        <li><strong>Simultaneous issue:</strong> When an owner’s policy and a lender’s policy on the same land are issued at the same time, the owner’s policy uses the regular owner’s rate, and the lender’s policy is a minimum $25 for coverage not exceeding the owner’s policy amount. Any lender coverage above the owner’s amount is charged at the regular original mortgage-policy rates. This estimator uses simultaneous issue whenever there is a loan. Source: Rule 69O-186.003(5) and the DFS overview linked above.</li>
+        <li><strong>Reissue rates</strong> (only if you check the box): $3.30 per $1,000 on the first $100,000, plus $3.00 per $1,000 up to $1 million, with a $100 minimum, if the transaction qualifies under the rule. Confirm with the title company. Source: Rule 69O-186.003(2).</li>
+        <li><strong>Sarasota County recording fees:</strong> $10.00 for the first page of each document and $8.50 for each additional page (documents 8.5" × 14" or smaller). Indexing the first four names is included; $1.00 for each additional name (not estimated here). Source: <a href="https://www.sarasotaclerk.com/Records/Recording-Services/Recording-Requirements/Recording-Fees-and-Taxes-Required" rel="noopener" target="_blank">Sarasota County Clerk of the Circuit Court and County Comptroller, Recording Fees and Taxes Required</a>.</li>
+      </ul>
+
+      <h2>Who usually pays what in Sarasota County?</h2>
+      <p>Florida law makes the taxes due, but it does not say whether the buyer or the seller must pay the owner’s title policy or the deed documentary stamps. The Florida Department of Revenue notes that all parties to a taxable document are liable for the tax regardless of who agrees to pay it. The Florida Department of Financial Services notes that the person paying the title-insurance premium generally gets first choice of the closing or title agent, subject to the lender’s approval.</p>
+      <p>We could not find an official DOR, Administrative Code, or Clerk rule that assigns those costs to one side. Local practice, as described by Sarasota County closing attorneys and in the check-box options on the standard Florida Realtors/Florida Bar contract, is often:</p>
+      <ul>
+        <li>The <strong>seller</strong> pays the documentary stamp tax on the deed.</li>
+        <li>The <strong>buyer</strong> pays the owner’s title-insurance premium and usually chooses the closing agent in Sarasota County. (This is the opposite of the common custom in neighboring Manatee County, where the seller often pays the owner’s policy.)</li>
+        <li>The <strong>buyer</strong> pays documentary stamps on the mortgage, the intangible tax, the lender’s title policy, and the fees to record the deed and the mortgage.</li>
+      </ul>
+      <p>That is custom, not law. Your purchase contract can flip any of it. Use the dropdowns above to match your contract, and confirm the allocation with the closing agent.</p>
+
+      <h2>What this estimator leaves out or leaves editable</h2>
+      <ul>
+        <li>Title search, examination, and closing or settlement fees (related title services). Rule 69O-186.003 says these must be charged at least at actual cost and shown separately; they are not a fixed state rate.</li>
+        <li>A possible title insurance assessment or policy fee, which the Office of Insurance Regulation may set and which cannot exceed $25 per policy when it applies. Enter it under “other” if it appears on your quote.</li>
+        <li>New-home purchase discounts, substitution-loan rates, and endorsements under Rule 69O-186.003, which depend on facts this form does not collect.</li>
+        <li>Lender origination charges, prepaid interest, escrow deposits, owner’s insurance, surveys, WDO inspections, HOA estoppels, municipal lien searches, prorations, and attorney fees.</li>
+        <li>Extra Clerk indexing charges when more than four names are indexed, and any additional recorded documents (for example, a mortgage satisfaction).</li>
+      </ul>
+
+      <div class="note">
+        <p><strong>This is not a Loan Estimate or Closing Disclosure.</strong> Those official forms come from your lender or closing agent. Do not use this page to shop lenders or title companies — it does not name or recommend any. Confirm current rates and your contract’s cost allocation with a licensed title or escrow company.</p>
+        <p>Related: <a href="/np-venice-move/local-services.html">Local Services Directory</a> · <a href="/np-venice-move/guides/homestead-exemption-north-port-venice.html">Homestead exemption</a> · <a href="/np-venice-move/guides/moving-to-north-port.html">North Port checklist</a> · <a href="/np-venice-move/guides/moving-to-venice.html">Venice checklist</a>.</p>
+      </div>
+
+      <aside class="soft-box agent-cta" aria-labelledby="calc-agent-heading">
+        <h2 id="calc-agent-heading">Questions about a North Port or Venice purchase or sale?</h2>
+        <p>If you want help thinking through a contract or a closing timeline, you can reach Tolmond Harrison, REALTOR®, a licensed Florida real estate sales associate with Exit King Realty, directly. He can talk through the process; a title or escrow company has to confirm the numbers on your actual file. No obligation — this estimator stays free either way.</p>
+        <div class="cta-row">
+          <a class="btn" href="mailto:tolmondh@hotmail.com?subject=Closing%20cost%20estimator%20%E2%80%94%20North%20Port%20%2F%20Venice">Email Tolmond</a>
+          <a class="btn btn-secondary" href="tel:+19412076517">Call 941-207-6517</a>
+        </div>
+        <p class="meta">Phone: <a href="tel:+19412076517">941-207-6517</a> · Email: <a href="mailto:tolmondh@hotmail.com">tolmondh@hotmail.com</a></p>
+        <p class="agent-cta__broker"><strong>Tolmond Harrison, REALTOR®, Sales Associate · Exit King Realty</strong>, 1804 Tamiami Trail S, Venice, FL 34293<br>FL License # SL3484019 · Equal Housing Opportunity.</p>
+      </aside>
+      <!-- newsletter-cta:start -->
+      <aside class="soft-box newsletter-cta" aria-labelledby="newsletter-cta-heading">
+        <h2 id="newsletter-cta-heading">Moving to North Port or Venice? Get the checklist by email.</h2>
+        <p>One practical email every other week: utilities, flood maps, internet, storm prep, and first-month to-dos for North Port &amp; Venice newcomers. We link to the official source for anything that changes. Free, no spam, unsubscribe anytime.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://tolmonds-newsletter.beehiiv.com/subscribe" rel="noopener">Send me the newsletter</a>
+        </div>
+        <p class="newsletter-cta__note">Emails are sent through beehiiv. See our <a href="/np-venice-move/privacy.html#newsletter">privacy policy</a>.</p>
+      </aside>
+      <!-- newsletter-cta:end -->
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav aria-label="Footer">
+        <a href="/np-venice-move/">Home</a>
+        <a href="/np-venice-move/guides/">Guides</a>
+        <a href="/np-venice-move/about.html">About</a>
+        <a href="/np-venice-move/disclosure.html">Disclosure</a>
+        <a href="/np-venice-move/terms.html">Terms</a>
+        <a href="/np-venice-move/privacy.html">Privacy</a>
+      </nav>
+      <p>Independent local guide for North Port and Venice, FL. Not a government site.</p>
+    </div>
+  </footer>
+<script>
+(function () {
+  function num(id) {
+    var el = document.getElementById(id);
+    if (!el) return 0;
+    var v = parseFloat(el.value);
+    return isFinite(v) && v > 0 ? v : 0;
+  }
+  function raw(id) {
+    var el = document.getElementById(id);
+    if (!el) return null;
+    if (el.value === "" || el.value === null) return null;
+    var v = parseFloat(el.value);
+    return isFinite(v) ? v : null;
+  }
+  function money(n) {
+    return Math.round((n + Number.EPSILON) * 100) / 100;
+  }
+  function fmt(n) {
+    return n.toLocaleString("en-US", { style: "currency", currency: "USD" });
+  }
+  function roundUpTo100(n) {
+    if (n <= 0) return 0;
+    return Math.ceil(n / 100) * 100;
+  }
+  function titlePremium(amount, reissue) {
+    var liability = roundUpTo100(amount);
+    if (liability <= 0) return 0;
+    var remaining = liability;
+    var premium = 0;
+    var t1 = Math.min(remaining, 100000);
+    premium += (t1 / 1000) * (reissue ? 3.30 : 5.75);
+    remaining -= t1;
+    if (reissue) {
+      var t2r = Math.min(remaining, 900000);
+      premium += (t2r / 1000) * 3.00;
+      remaining -= t2r;
+      var t3r = Math.min(remaining, 9000000);
+      premium += (t3r / 1000) * 2.00;
+      remaining -= t3r;
+      premium += (remaining / 1000) * 1.50;
+    } else {
+      var t2 = Math.min(remaining, 900000);
+      premium += (t2 / 1000) * 5.00;
+      remaining -= t2;
+      var t3 = Math.min(remaining, 4000000);
+      premium += (t3 / 1000) * 2.50;
+      remaining -= t3;
+      var t4 = Math.min(remaining, 5000000);
+      premium += (t4 / 1000) * 2.25;
+      remaining -= t4;
+      premium += (remaining / 1000) * 2.00;
+    }
+    return money(Math.max(premium, 100));
+  }
+  function deedDocStamps(price) {
+    if (price <= 0) return 0;
+    return money(Math.max((roundUpTo100(price) / 100) * 0.70, 0.70));
+  }
+  function mortgageDocStamps(loan) {
+    if (loan <= 0) return 0;
+    return money(Math.max((roundUpTo100(loan) / 100) * 0.35, 0.35));
+  }
+  function intangibleTax(loan) {
+    if (loan <= 0) return 0;
+    return money(Math.max(loan * 0.002, 0.20));
+  }
+  function recordingFee(pages) {
+    var p = Math.floor(pages);
+    if (p <= 0) return 0;
+    return money(10 + Math.max(0, p - 1) * 8.50);
+  }
+  function simultaneousLender(ownerAmt, loanAmt, reissue) {
+    if (loanAmt <= 0) return 0;
+    if (loanAmt <= ownerAmt) return 25;
+    var excess = loanAmt - ownerAmt;
+    return money(25 + titlePremium(excess, false));
+  }
+
+  function row(tbody, label, amount, note) {
+    var tr = document.createElement("tr");
+    if (!amount) tr.className = "zero";
+    var td1 = document.createElement("td");
+    td1.textContent = label;
+    if (note) {
+      var span = document.createElement("div");
+      span.className = "hint";
+      span.textContent = note;
+      td1.appendChild(span);
+    }
+    var td2 = document.createElement("td");
+    td2.className = "amt";
+    td2.textContent = fmt(amount);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tbody.appendChild(tr);
+    return amount;
+  }
+  function totalRow(tbody, label, amount) {
+    var tr = document.createElement("tr");
+    tr.className = "total";
+    var td1 = document.createElement("td");
+    td1.textContent = label;
+    var td2 = document.createElement("td");
+    td2.className = "amt";
+    td2.textContent = fmt(amount);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tbody.appendChild(tr);
+  }
+
+  function calculate() {
+    var price = num("price");
+    var loan = num("loan");
+    if (loan > price && price > 0) {
+      /* still compute; loan can exceed price in some cases */
+    }
+    var sellerPct = num("sellerCommission");
+    var buyerPct = num("buyerCommission");
+    var deedPages = num("deedPages") || 2;
+    var mortPages = num("mortgagePages") || 20;
+    var reissue = document.getElementById("reissue").checked;
+    var ownerPays = document.getElementById("ownerPays").value;
+    var deedStampsPay = document.getElementById("deedStampsPay").value;
+
+    var stampsDeed = deedDocStamps(price);
+    var stampsNote = mortgageDocStamps(loan);
+    var intangible = intangibleTax(loan);
+    var ownerTitle = titlePremium(price, reissue);
+    var lenderTitle = simultaneousLender(price, loan, reissue);
+    var recDeed = recordingFee(deedPages);
+    var recMort = loan > 0 ? recordingFee(mortPages) : 0;
+    var recBuyerAuto = money(recDeed + recMort);
+    var recBuyerOverride = raw("recOverrideBuyer");
+    var recBuyer = recBuyerOverride === null ? recBuyerAuto : money(Math.max(recBuyerOverride, 0));
+    var recSeller = money(Math.max(raw("recOverrideSeller") || 0, 0));
+    var sellerComm = money(price * (sellerPct / 100));
+    var buyerComm = money(price * (buyerPct / 100));
+
+    var titleSvcB = num("titleServicesBuyer");
+    var titleSvcS = num("titleServicesSeller");
+    var survey = num("survey");
+    var lienSearch = num("lienSearch");
+    var hoa = num("hoaEstoppel");
+    var lenderFees = num("lenderFees");
+    var prepaids = num("prepaids");
+    var otherB = num("otherBuyer");
+    var otherS = num("otherSeller");
+
+    var buyerItems = [];
+    var sellerItems = [];
+
+    function add(side, label, amt, note) {
+      if (side === "buyer") buyerItems.push({ label: label, amt: amt, note: note });
+      else sellerItems.push({ label: label, amt: amt, note: note });
+    }
+
+    add(deedStampsPay, "Deed documentary stamps ($0.70 per $100 of price)", stampsDeed, "Florida DOR / § 201.02");
+    if (loan > 0) {
+      add("buyer", "Mortgage documentary stamps ($0.35 per $100 of loan)", stampsNote, "Florida DOR / § 201.08, recorded mortgage (no cap applied)");
+      add("buyer", "Nonrecurring intangible tax (0.2% of loan)", intangible, "Florida DOR / § 199.133");
+    }
+    add(ownerPays, "Owner’s title insurance (promulgated risk premium)", ownerTitle, reissue ? "Rule 69O-186.003 reissue rates" : "Rule 69O-186.003 original owner’s rates");
+    if (loan > 0) {
+      add("buyer", "Lender’s title insurance (simultaneous issue)", lenderTitle, "Rule 69O-186.003(5); $25 when coverage does not exceed the owner’s policy");
+    }
+    add("buyer", "Estimated recording fees (deed" + (loan > 0 ? " + mortgage" : "") + ")", recBuyer, recBuyerOverride === null ? ("Clerk: $10 first page + $8.50 each additional; " + deedPages + " deed page(s)" + (loan > 0 ? ", " + mortPages + " mortgage page(s)" : "")) : "Manual override");
+    if (recSeller) add("seller", "Seller recording (entered)", recSeller, "Editable; not a Clerk default");
+    if (sellerComm) add("seller", "Seller commission (" + sellerPct + "%)", sellerComm, "Negotiated; not a legal rate");
+    if (buyerComm) add("buyer", "Buyer brokerage (" + buyerPct + "%)", buyerComm, "Negotiated; not a legal rate");
+    if (titleSvcB) add("buyer", "Title search / exam / closing (entered)", titleSvcB, "Not a promulgated rate");
+    if (titleSvcS) add("seller", "Title / closing charges (entered)", titleSvcS, "Not a promulgated rate");
+    if (survey) add("buyer", "Survey (entered)", survey);
+    if (lienSearch) add("seller", "Municipal lien search (entered)", lienSearch, "Allocation is editable in this line’s side only if you move the amount; confirm in your contract");
+    if (hoa) add("seller", "HOA / condo estoppel or transfer (entered)", hoa, "Who pays is set by the association documents and the contract; confirm and re-enter on the other side if needed");
+    if (lenderFees) add("buyer", "Lender fees (entered)", lenderFees);
+    if (prepaids) add("buyer", "Prepaids (entered)", prepaids);
+    if (otherB) add("buyer", "Other buyer costs (entered)", otherB);
+    if (otherS) add("seller", "Other seller costs (entered)", otherS);
+
+    var buyerTotal = 0;
+    var sellerTotal = 0;
+    var bt = document.querySelector("#buyer-table tbody");
+    var st = document.querySelector("#seller-table tbody");
+    bt.innerHTML = "";
+    st.innerHTML = "";
+    buyerItems.forEach(function (item) {
+      buyerTotal = money(buyerTotal + item.amt);
+      row(bt, item.label, item.amt, item.note);
+    });
+    sellerItems.forEach(function (item) {
+      sellerTotal = money(sellerTotal + item.amt);
+      row(st, item.label, item.amt, item.note);
+    });
+    if (!buyerItems.length) row(bt, "No buyer items with the current inputs", 0);
+    if (!sellerItems.length) row(st, "No seller items with the current inputs", 0);
+    totalRow(bt, "Estimated buyer total", buyerTotal);
+    totalRow(st, "Estimated seller total", sellerTotal);
+
+    var summary = "With the current inputs, the estimated buyer total is " + fmt(buyerTotal) + " and the estimated seller total is " + fmt(sellerTotal) + ". Official tax and title-premium lines are calculated from the sources listed below; other lines are only included if you entered an amount.";
+    document.getElementById("calc-summary").textContent = summary;
+  }
+
+  function bindTabs() {
+    var buyerTab = document.getElementById("tab-buyer");
+    var sellerTab = document.getElementById("tab-seller");
+    var buyerPanel = document.getElementById("panel-buyer");
+    var sellerPanel = document.getElementById("panel-seller");
+    function show(which) {
+      var buyer = which === "buyer";
+      buyerTab.setAttribute("aria-selected", buyer ? "true" : "false");
+      sellerTab.setAttribute("aria-selected", buyer ? "false" : "true");
+      buyerPanel.hidden = !buyer;
+      sellerPanel.hidden = buyer;
+    }
+    buyerTab.addEventListener("click", function () { show("buyer"); });
+    sellerTab.addEventListener("click", function () { show("seller"); });
+  }
+
+  var form = document.getElementById("calc-inputs");
+  form.addEventListener("submit", function (e) { e.preventDefault(); calculate(); });
+  form.addEventListener("input", calculate);
+  form.addEventListener("change", calculate);
+  document.getElementById("other-fees").addEventListener("input", calculate);
+  document.getElementById("other-fees").addEventListener("change", calculate);
+  document.getElementById("reissue").addEventListener("change", calculate);
+
+  bindTabs();
+  calculate();
+})();
+</script>
+<script data-goatcounter="https://npvenicemove.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
