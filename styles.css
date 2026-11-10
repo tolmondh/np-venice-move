@@ -305,3 +305,32 @@ code {
 .calc-results .zero { color: var(--muted); }
 .sources { font-size: 0.92rem; }
 .sources li { margin: 0.35rem 0; }
+
+
+/* Seller net sheet */
+.net-hero {
+  background: var(--card);
+  border: 2px solid var(--accent);
+  border-radius: 0.65rem;
+  padding: 1.1rem 1.15rem;
+  margin: 1rem 0 1.25rem;
+  text-align: center;
+}
+.net-hero__label {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.net-hero__amount {
+  margin: 0.25rem 0 0.35rem;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+.net-hero__amount.is-negative { color: #8a1f1f; }
+.net-hero__note { margin: 0; font-size: 0.9rem; color: var(--muted); }
